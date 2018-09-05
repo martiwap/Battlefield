@@ -1,0 +1,12 @@
+{
+    "name": "root/spaceship-php",
+    "require": {},
+    "require-dev": {
+        "phpspec/phpspec": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spaceship\\": "src/"
+        }
+    }
+}

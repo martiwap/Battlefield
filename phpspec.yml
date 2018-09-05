@@ -1,0 +1,5 @@
+suites:
+    default:
+        namespace: Spaceship
+        psr4_prefix: Spaceship
+formatter.name: pretty
