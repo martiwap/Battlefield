@@ -2,12 +2,10 @@
 
 namespace Spaceship;
 
-//use Spaceship\Spaceship;
-
-class Civic extends Spaceship
+class Nsx extends Spaceship
 {
-    private $model = 'civic';
-    private $speed = 200;
+    private $model = 'nsx';
+    private $speed = 180;
 
     public function getModel()
     {
