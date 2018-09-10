@@ -1,6 +1,14 @@
 <?php
 
-$myCivic = new \Spaceship\Civic();
-$myJazz = new \Spaceship\Jazz();
+namespace Spaceship;
 
-$shipsOnField = [$myCivic, $myJazz];
+use Spaceship\SpaceShipModelSpec\Civic;
+use Spaceship\SpaceShipModelSpec\Jazz;
+
+$myCivic = new Civic();
+$myJazz = new Jazz();
+$aiSpaceship = new AISpaceship();
+
+$shipsOnField = [$myCivic, $myJazz, $aiSpaceship];
+
+

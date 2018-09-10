@@ -2,11 +2,31 @@
 
 namespace Spaceship;
 
-class Game
+use phpDocumentor\Reflection\Types\Boolean;
+
+class Game implements GameRulesInterface
 {
-    public function isSpaceShipOnField()
+    private $score;
+    private $winner;
+
+    public function setScore($score)
     {
-       if (!empty($shipsOnField)) {
+        $this->score = $score;
+    }
+
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    public function getWinner()
+    {
+        return $this->winner;
+    }
+
+    public function isAnybodyHere(array $shipsOnField) : Boolean
+    {
+       if ($shipsOnField) {
            return true;
        }
 
