@@ -4,7 +4,7 @@ namespace Spaceship;
 
 use phpDocumentor\Reflection\Types\Boolean;
 
-class Game implements GameRulesInterface
+class Game extends GameRules
 {
     private $score;
     private $winner;
@@ -26,10 +26,6 @@ class Game implements GameRulesInterface
 
     public function isAnybodyHere(array $shipsOnField) : Boolean
     {
-       if ($shipsOnField) {
-           return true;
-       }
-
-       return false;
+        return empty($shipsOnField);
     }
 }
