@@ -28,4 +28,11 @@ class Game extends GameRules
     {
         return empty($shipsOnField);
     }
+
+    public function getHealthAfterDamage(Spaceship $spaceship)
+    {
+        $currentHealth = $spaceship->getHealth() - $spaceship->getDamageModifier();
+
+        return $currentHealth;
+    }
 }
