@@ -2,14 +2,37 @@
 
 namespace Spaceship;
 
-class Game
-{
-    public function isSpaceShipOnField()
-    {
-       if (!empty($shipsOnField)) {
-           return true;
-       }
+use phpDocumentor\Reflection\Types\Boolean;
 
-       return false;
+class Game extends GameRules
+{
+    private $score;
+    private $winner;
+
+    public function setScore($score)
+    {
+        $this->score = $score;
+    }
+
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    public function getWinner()
+    {
+        return $this->winner;
+    }
+
+    public function isAnybodyHere(array $shipsOnField) : Boolean
+    {
+        return empty($shipsOnField);
+    }
+
+    public function getHealthAfterDamage(Spaceship $spaceship)
+    {
+        $currentHealth = $spaceship->getHealth() - $spaceship->getDamageModifier();
+
+        return $currentHealth;
     }
 }
